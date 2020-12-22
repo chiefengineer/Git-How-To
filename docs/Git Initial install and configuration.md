@@ -67,6 +67,17 @@ and configuration process:
 
 </details>
 
+<details>
+  <summary>Installation walk-through</summary>
+
+Introductory text goes here  
+
+And more here.  
+
+![Install page 1](images/Git-2.29.2.3-Screen01.png "Initial screen")  
+
+</details>
+
 ### Post-Installation  
 
 <details>
