@@ -35,7 +35,7 @@
 
 Version Control System.
   * Centralized
-  * Distributed
+  * Distributed  
 
 </details>
 
@@ -70,11 +70,60 @@ and configuration process:
 <details>
   <summary>Installation walk-through</summary>
 
-Introductory text goes here  
+When you begin your installation of Git, you will be presented with an  
+installation wizard. The following images are a _suggestion_ as to how to  
+configure Git, one may choose other options, of course. But, these worked  
+just fine for the author, and they allow code to be written in say "Windows"  
+and then extracted and compiled in Linux because of the line-ending selection.  
 
-And more here.  
+The first page is the inevitable license page. Just hit "Next".
 
-![Install page 1](images/Git-2.29.2.3-Screen01.png "Initial screen")  
+![Install page 1](images/Git-2.29.2.3-Screen01.png "GNU Public License")  
+
+
+Select the destination folder into which Git will be installed. Accepting the  
+default is fine for this page.  
+
+![Install page 1](images/Git-2.29.2.3-Screen02.png "Destination Folder")  
+
+
+![Install page 1](images/Git-2.29.2.3-Screen03.png "Select Components")  
+
+
+![Install page 1](images/Git-2.29.2.3-Screen04.png "Select Start Menu Folder")  
+
+
+![Install page 1](images/Git-2.29.2.3-Screen05.png "Select Default Editor Drop-down")  
+
+
+![Install page 1](images/Git-2.29.2.3-Screen06.png "Select Default Editor")  
+
+
+![Install page 1](images/Git-2.29.2.3-Screen07.png "Adjust Initial Branch name")  
+
+
+![Install page 1](images/Git-2.29.2.3-Screen08.png "Adjust Path")  
+
+
+![Install page 1](images/Git-2.29.2.3-Screen09.png "Choose HTTPS Transport back-end")  
+
+
+![Install page 1](images/Git-2.29.2.3-Screen10.png "Configure Line Endings")  
+
+
+![Install page 1](images/Git-2.29.2.3-Screen11.png "Select Terminal Editor")  
+
+
+![Install page 1](images/Git-2.29.2.3-Screen12.png "Select Default 'git pull' behavior")  
+
+
+![Install page 1](images/Git-2.29.2.3-Screen13.png "Choose credential helper")  
+
+
+![Install page 1](images/Git-2.29.2.3-Screen14.png "Configure extra options")  
+
+
+![Install page 1](images/Git-2.29.2.3-Screen15.png "Configure experimental options")  
 
 </details>
 
