@@ -72,9 +72,12 @@ Version Control System.
 The following software should be obtained prior to beginning the installation  
 and configuration process:  
 
-   * [Git][Git-Url]
-   * [Visual Studio Code][VisualStudioCode-Url]
+   * [Visual Studio Code][VisualStudioCode-Url]  
+
+     -- OR --  
    * [Visual Studio Code Insiders][VisualStudioCodeInsiders-Url]
+
+   * [Git][Git-Url]  
    * [(Optional) Beyond Compare Diff/Merge tool][BeyondCompare-Url]
 
 </details>
@@ -86,6 +89,24 @@ and configuration process:
 </details>
 
 ### Post-Installation  
+
+<details>
+  <summary>Setting Git defaults</summary>
+
+Execute the following commands to configure Git for your use:  
+
+  * git config --system core.longpaths true
+  * git config --global user.name "\<Your name\>"
+  * git config --global user.email \<Your Email address\>
+  * git config --global core.autocrlf input
+    * This last command ensures "Commit as-is, pull as Unix".
+
+</details>
+
+<details>
+  <summary>Making your life easier with Git aliases</summary>
+
+</details>
 
 <details>
   <summary>(Optional) Configure Git to use Beyond Compare 4 for Diff/Merge</summary>
@@ -111,7 +132,10 @@ and configuration process:
 <details>
   <summary>Articles</summary>
 
-[Setting up Git](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
+[Setting up Git](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)  
+[Configure Git to use Beyond Compare](http://www.scootersoftware.com/support.php?zz=kb_vcs)  
+[GitFlow Workflow](https://www.gitflow.com/)  
+[Git, the free Book](https://git-scm.com/book/en/v2)  
 
 </details>
 
