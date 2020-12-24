@@ -135,7 +135,7 @@ Execute the following commands to configure Git for your use:
 [Setting up Git](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)  
 [Configure Git to use Beyond Compare](http://www.scootersoftware.com/support.php?zz=kb_vcs)  
 [GitFlow Workflow](https://www.gitflow.com/)  
-[Git, the free Book](https://git-scm.com/book/en/v2)  
+["Pro Git", the free Book](https://git-scm.com/book/en/v2)  
 
 </details>
 
