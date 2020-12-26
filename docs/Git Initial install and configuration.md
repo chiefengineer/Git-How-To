@@ -226,6 +226,6 @@ snapshots.
 [GitConfigurationWalk-Through-Url]: chapters/GitInstallationWalk-Through.md
 [ConfigureGitBeyondCompare4-Url]: chapters/ConfigureBeyondCompare4AsADiffAndMergeTool.md  
 [TheThreeStates-Url]: chapters/TheThreeStatesOfAGitFile.md  
-[FunWithBranching-Url]: chapters/ABitMoreFunWIthGitBranching.md
+[FunWithBranching-Url]: chapters/ABitMoreFunWithGitBranching.md
 
 </details>
