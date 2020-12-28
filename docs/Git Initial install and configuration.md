@@ -127,6 +127,40 @@ Execute the following commands to configure Git for your use:
 <details>
   <summary>Make your life easier with Git command aliases</summary>
 
+Git aliases are your friend. Don't remember a complicated Git command? Always  
+forgetting the exact syntax? This is easy to fix with something you can  
+customize yourself.
+
+Here are some common aliases to assign to various Git commands:  
+
+To change branches (git checkout \<branch name\>)  
+`git config --global alias.co checkout`  
+
+So now, instead of `git checkout`, you type `git co`
+
+Similarly, to create a new branch:  
+`git config --global alias.br branch`
+...and now it's `git br \<branch name\>` instead of `git branch`
+
+To commit:  
+`git config --global alias.cm commit` 
+
+To get status:  
+`git config --global alias.st status`  
+
+To un-stage a file (be careful with this):
+`git config --global alias.unstage 'reset HEAD --'`
+
+To see the last entry in the Git log file:  
+`git config --global alias.last 'log -1 HEAD'`  
+
+...and so on and so forth. You can see that the key is the  
+`...alias.\<some two letter alias\> followed by the git command to alias`  
+and it doesn't have to be two characters, whatever you are comfortable with.  
+Pay close attention to the syntax of the `git last` and `git unstage` commands.  
+If you look closely, you can see that the "command" is embedded within single  
+quotes. This is how you pass a command with parameters to the alias.  
+
 </details>
 
 ### Using Git
@@ -195,6 +229,58 @@ snapshots.
 
 <details>
   <summary>Scenarios</summary>
+
+#### Scenario 1 - Starting fresh with a local repository
+This is something you've already seen. Perform the following steps:
+
+1. Create a new directory in your repository home.
+2. Change to that new directory.
+3. Execute the command: `git init`
+4. Done.
+
+The directory you created is now your working directory. This directory is  
+where you will perform all your modifications, stage those changes and  
+ultimately commit those changes to the local repository, and, if desired,  
+push those changes to one or more remote repositories.
+
+#### Scenario 2 - Starting fresh with a remote repository
+This one is a little different in that instead of creating the repository  
+locally, we'll be creating it on the remote "server" and then bringing it  
+down to the local machine.
+For GitHub:
+1.  Log in to your GitHub account. If you don't have one, create one.
+2.  Create a new repository by following the instructions on the screen.
+3.  Once created, find the "Code" button. This will show you a drop-down with  
+    full url address of the newly created repository. There is even a  
+    handy-dandy "copy to clipboard" button.
+4.  Once you have the full path to the repository, again, create a new  
+    directory in your repository home.
+5.  Change to that directory.
+6.  From a prompt there instead of git init, perform a  
+    `git clone \<the url you just copied\>`.
+    This will fetch down the repository from the remote and you're all set.  
+
+#### Scenario 3 - Cloning an already-existing remote repository
+This is just a variant of Scenario 2 in that you need to fetch the url of the  
+desired repository, then follow the same steps of creating a local directory  
+for the repository and cloning the remote. All done.  
+
+</details>  
+
+<details>
+  <summary>Processes</summary>
+  
+  Once you have your local repository created via one of the scenarios, the  
+  _very first thing_ you should do is execute a branch command to start your  
+  own branch e.g. `git br <your user name>` or some other agreed upon standard.  
+  The reason for this is to ensure that all of your activity is performed on a  
+  branch **_NOT_** "main". The "main" branch should be reserved for final,  
+  approved changes to the code base and access to the "main" branch should be  
+  limited to a select few gatekeepers whose job it is to approve modifications  
+  to the production codebase, e.g. "main".  
+  Given that branches can, in turn, have branches, this should present no  
+  difficulty. One still uses the same git commands only now the default is to  
+  manipulate your own branch vice "main".
 
 </details>  
 
