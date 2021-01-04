@@ -233,7 +233,7 @@ snapshots.
 #### Scenario 1 - Starting fresh with a local repository
 This is something you've already seen. Perform the following steps:
 
-1. Create a new directory in your repository home.
+1. Create a new directory in your repository home, e.g. "_Repos".
 2. Change to that new directory.
 3. Execute the command: `git init`
 4. Done.
@@ -245,25 +245,35 @@ push those changes to one or more remote repositories.
 
 #### Scenario 2 - Starting fresh with a remote repository
 This one is a little different in that instead of creating the repository  
-locally, we'll be creating it on the remote "server" and then bringing it  
-down to the local machine.
+locally, we'll be creating it on the remote "server" **_FIRST_**and then  
+bringing it down to the local machine.  
+
 For GitHub:
 1.  Log in to your GitHub account. If you don't have one, create one.
 2.  Create a new repository by following the instructions on the screen.
-3.  Once created, find the "Code" button. This will show you a drop-down with  
-    full url address of the newly created repository. There is even a  
-    handy-dandy "copy to clipboard" button.
+3.  Once created, find the "Code" button and press the drop-down. This will  
+    show you a drop-down with the full url address of the newly created  
+    repository. There you will see a handy-dandy "copy to clipboard" button  
+    (see picture - the circled item is the button you seek, the arrow points  
+    to the url that will be copied).  
+
+![Picture of Drop-down](images/GetTheGitCloningUrl.png "Clone Url")
+
 4.  Once you have the full path to the repository, again, create a new  
     directory in your repository home.
 5.  Change to that directory.
-6.  From a prompt there instead of git init, perform a  
-    `git clone \<the url you just copied\>`.
+6.  From a prompt there, instead of git init, perform a  
+    `git clone <the url you just copied>`.
     This will fetch down the repository from the remote and you're all set.  
 
 #### Scenario 3 - Cloning an already-existing remote repository
-This is just a variant of Scenario 2 in that you need to fetch the url of the  
-desired repository, then follow the same steps of creating a local directory  
-for the repository and cloning the remote. All done.  
+Doing this is just a variant of Scenario 2 - but this time, rather than  
+actually create a new repository and then clone it to your local machine,  
+you'll start out with an already-existing remote repository. Just find the  
+aforementioned "Copy to clipboard" button, press it to get the url of the  
+desired repo and continue as before by creating a local directory for the  
+repo, changing into that repo, opening a command prompt (or PowerShell) and  
+performing the git clone command as before.  
 
 </details>  
 
@@ -281,6 +291,74 @@ for the repository and cloning the remote. All done.
   Given that branches can, in turn, have branches, this should present no  
   difficulty. One still uses the same git commands only now the default is to  
   manipulate your own branch vice "main".
+
+  ##### Example work flow (this is an example, _not_ fully baked yet)  
+
+  Presume the following activities have taken place:  
+    1.  A problem has come up that needs solving e.g. Family Law.  
+    2.  It has been determines that software is needed as part of the solution.  
+    3.  A BA has been summoned to create the necessary "Given..Then..When"  
+        scenarios (e.g. Unit tests for us to implement in code) and has the  
+        problem well defined as a solution in the abstract.  
+    4.  A BA has sat down with a tech lead to describe the resulting  
+        collection of Gherkin code items and has referenced a project manager  
+        to create the necessary Tasks/Work Items per task (how this works is  
+        left for another time - the process here is lengthy and quite detailed,  
+        this is just an overview of a notion of a beginning to "process".).  
+    5.  The result of that sit-down is that the tech lead now knows of the  
+        problem, the **suggested** solution (I say "suggested" because we  
+        cannot expect a BA to actually know what is feasible in code, just  
+        clearly define the problem and how they'd like to see the solution  
+        function - it's the tech leads' job to convert "wishful thinking" into  
+        actionable items for coders to implement).  
+    6.  So...we have a collection of work items to be implemented. Cool. Now  
+        the tech lead starts assigning work items to engineers who will go to  
+        the appropriate Git repository and pull out whatever working code is  
+        in place or, create a brand new repository for the new feature and  
+        start writing code.  
+    7.  Once that repository is available locally, create a branch if it's not  
+        already created that is the engineers' user name. This is your "home"  
+        branch, the place that all of your changes will go - **_NOT_** the   
+        "main" or "master" or whatever is the root branch.  
+        _ON YOUR HOME BRANCH, CREATE A "FEATURE" BRANCH._    
+        This is where all of your work will be done - the feature branch that  
+        is hung off of your "home" branch.  
+        This is important - at no time shall "main" be directly affected by  
+        anything a developer does - that's a job solely for the gatekeepers -  
+        they will move code from "I think it's done" to "ready for testing",  
+        not the engineers.  
+    8.  Write code, commit code locally, rinse and repeat until your unit tests  
+        pass and you think that the work item is fully implemented.  
+        Save to remote as appropriate e.g. make sure the code compiles before  
+        you check it in, etc. This can be defined as "policy" later.  
+    9.  All the usual practices of SOLID, small methods, etc. etc. that  
+        everyone learned when learning how to write code will be practiced,  
+        **_INCLUDING CODE REVIEWS by senior developers_**.  
+    10. Once a work item is approved for testing, that work item may be closed  
+        by doing a final commit to the engineers' home branch (the one that  
+        is their user name or whatever standard is applied) via a merge from  
+        their personal feature branch as they were working on the code.  
+    12. That will be merged into the remote system as "ready for review"  
+        by the gatekeeper. Once the gatekeeper passes it, it will be  
+        ready for movement to the test environment to be tested by QA.  
+        When I say "movement", I mean that an actual Docker image with the  
+        next version of the code will be "moved" to the test arena, the  
+        appropriate container created and activated and testing can begin.  
+    13. Once QA signs off, then the same image will be moved to production or  
+        merged into the main branch for a final build and integration test.  
+    14. Once integration testing is complete, off to production it goes.  
+
+  Understand, this is just a rough idea of what the process ought to be, not  
+  what it is nor should be. We as a team in Architecture need to develop these  
+  processes such that they are measurable (easy with Git actions), easy on  
+  us developers to maintain (little extra work needed to do the "admin"  
+  portion of the coding endeavor), easy to test, easy to fix, easy to modify,  
+  easy for the "bosses" to monitor and nod their heads with approval,  
+  and, most importantly, easy to teach to those _not_ Architecture. We will  
+  have to not only live with the process, we will have to convince others to  
+  play in our sandbox and do as we say or none of this will work.    
+  Key here is "easy". We are few and need as little stress beyond the writing  
+  of the code as possible, so let's make it that way.  
 
 </details>  
 
@@ -312,6 +390,7 @@ for the repository and cloning the remote. All done.
 [GitConfigurationWalk-Through-Url]: chapters/GitInstallationWalk-Through.md
 [ConfigureGitBeyondCompare4-Url]: chapters/ConfigureBeyondCompare4AsADiffAndMergeTool.md  
 [TheThreeStates-Url]: chapters/TheThreeStatesOfAGitFile.md  
-[FunWithBranching-Url]: chapters/ABitMoreFunWithGitBranching.md
+[FunWithBranching-Url]: chapters/FunWithGitBranching.md
+[MoreFunWithBranching-Url]: chapters/MoreFunWithGitBranching.md
 
 </details>

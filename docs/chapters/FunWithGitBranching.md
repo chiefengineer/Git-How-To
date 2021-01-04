@@ -1,11 +1,27 @@
 ### A bit of fun with git branching
 
   1.  We will presume that the repository created via the above process still  
-      exists. If not, please go re-create it.
+      exists. If not, please go re-create it.  
+      Go ahead and create the "TestFile.txt" file or whatever you used before.  
+      Commit it to the "main" branch - this is what happens when you do a  
+      "commit" without changing branches - the default, first-created "branch"  
+      is "main" (used to be "master" but that had some connotations that were  
+      frowned upon, so "main" is used instead - you established the default  
+      branch when installing git for the first time, remember?).  
+      It should be noted that there is _nothing_ special about the so-called  
+      "main" (or "master" or whatever) default branch, it's just a branch.  
+      It's only claim to fame and brief fame it is, is that it is automatically  
+      created whenever a `git init` is executed where no .git directory exists.  
+      So, with the original file created, modified, staged and committed  
+      locally, we are now ready to play with branches.
   2.  Now, to create a branch, execute the following command:
         `git branch Toy`
 
-      This creates a branch in the "Playground" repository called "Toy".
+      This creates a branch in the "Playground" repository called "Toy".  
+      A note should be taken here - creating a branch _does nothing more than_  
+      _create a **new** place in the git file system to store snapshots_.  
+      Remember, this is all about the working directory and the snapshots  
+      produced there.
   3.  Do a directory and you will see that the content of the working directory  
       _is unchanged!_
       All that took place here is that Git was told to create a new  
@@ -37,6 +53,16 @@
       something monumentally stupid but the key here is that the snapshot  
       pointed to by the current branch is what your working directory will  
       look like when the checkout is complete.  
+      Now, before you panic and wonder what happened to all your work that  
+      you just completed, _don't worry_, it's still there. What Git did was  
+      subtle - it took the snapshot of your working directory, made the new  
+      branch, committed that snapshot to the new branch, then immediately  
+      checked it back out so that your starting state in the new branch  
+      _looks **exactly** like the place you were in the other branch. Git will  
+      do this only once - when the branch is created and then checked out for  
+      the first time. Git recognizes that the branch is entirely empty and  
+      will look at the content of the "from" branch and make the new branch  
+      look exactly the same.  
       There is, of course, **much** more to branching (and merging) than what  
       is described herein. This paper will not attempt to delve into all the  
       intricacies of branching and merging, rather simply give exposure to the  
@@ -67,5 +93,10 @@
       That, in a nutshell, is Git branching. Obviously this is a powerful tool  
       and much more investigation needs to be performed so this paper leaves  
       said investigation as "an exercise for the student".  
+      Something to remember: as long as you don't commit to a remote location  
+      you can "play" all you want to as long as the repository you are  
+      "playing" with is devoted solely to "play" because at the end of the  
+      day, clean-up consists of simply deleting the repository root directory  
+      (the one that contains the .git folder).
       There will be more examples of branching and merging in this paper in the  
       section titled "process".  

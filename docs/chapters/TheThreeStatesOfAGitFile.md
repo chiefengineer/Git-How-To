@@ -8,8 +8,8 @@ point, we'll walk through a demonstration showing that there are actually four
 states that a file can be in. The books say three only because Git will  
 manipulate a file that is only in three of the four states.  
 
-For right now, ignore the commands as far was what are they and what they  
-do, for this walk-through you need only execute them as written in exactly  
+For right now, ignore the commands as far was what are they and what they do,  
+for this walk-through you need only execute them as written in exactly  
 the order presented. Full descriptions of all commands used will be provided  
 at a later time, promise!
 
@@ -17,8 +17,8 @@ The procedure:
   1.  Open a command prompt, doesn't matter which, CMD or PowerShell. This  
       demo will presume PowerShell.
   2.  Navigate to your standard repository root. This should be something like  
-      c:\Users\\\<Your User Name>\Documents\\_Repos or some such as that. This is  
-      the root directory of where all your local repositories will be stored.  
+      c:\Users\\\<Your User Name>\Documents\\_Repos or some such as that. This  
+      is the root directory of where all your local repositories will be stored.  
   3.  Create a directory there, call it "Playground"
   4.  Change into that directory.
   5.  Execute the command `git status` just like you see it. The response  
@@ -27,9 +27,9 @@ The procedure:
       `fatal: not a git repository (or any of the parent directories): .git`  
 
       This is telling you that the directory you are currently pointing to is  
-      not part of the Git family. There is no repository here, no tracked files,  
-      no nothing. It's just a directory as far as Git is concerned. This is  
-      because the directory has yet to be turned into a repository.  
+      not part of the Git family. There is no repository here, no tracked  
+      files, no nothing. It's just a directory as far as Git is concerned. This  
+      is because the directory has yet to be turned into a repository.  
   6.  Execute the command `git init`.  This is the command that turns an  
       ordinary directory into a local git repository.  
   7.  Perform a directory list: `ls`. You should see no files and no  
@@ -82,11 +82,16 @@ The procedure:
       before but it has no clue what to do with it. This is why the author  
       feels that there are actually four states that a file can be in, this  
       fourth state is "un-tracked" - Git doesn't know what to do with the file  
-      bit it _is_ **aware** of the file.  
+      but it _is_ **aware** of the file.  
   12. So, to rectify this problem and add the file to the repository, or at  
       least make Git aware of the file and place it in a state such that Git  
       can now manipulate the file, perform the following command:  
       `git add *`  
+      You can also do a  
+      `git add <file name> [<file name> <file name>]`  
+      where each \<file name\> is space-separated (the brackets [] represent  
+      additional, optionally included files. IOW, one may either add by  
+      wild card (*) or by individual file name).  
       This moves the file status from "un-tracked" to "staged".  
       If you have set up your Git install using the authors' recommended  
       settings, then you should see the following message:
@@ -163,7 +168,17 @@ The procedure:
       do so.  
       So...how does one actually perform a commit? Execute the following:  
 
-      `git commit -a -m "Some Commit Message"`
+      `git commit -a -m "Some Commit Message"`  <-- Note the double quotes ("")  
+      around the "Some Commit Message" message - they are **_REQUIRED_**,  
+      otherwise, if Git is configured correctly and the appropriate editor is  
+      available, said editor will open and Git will wait patiently whilst you  
+      add the aforementioned commit message. Either way, a commit message  
+      **must** be provided. And remember, this is _not_ **what** you did to  
+      require this commit, but instead it's **why** this commit was made.  
+      We will be doing more with commit messages later, when you "extend" them  
+      you can do things like tell Azure DevOps (TFS) that an item is "closed"  
+      or "resolved", etc. just by using a different syntax. Not covered in this  
+      document.
 
       The "-a" tells git to add any files that might not yet have been staged  
       and is therefore optional.  

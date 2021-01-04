@@ -7,6 +7,7 @@ configure Git, one may choose other options, of course. But, these worked
 just fine for the author and they allow code to be written in one OS  
 environment, e.g. "Windows", and then extracted and compiled in another OS  
 environment, e.g. Linux, due to the line-ending selection.  
+You can git "Git" here:  [Git][Git-Url]  
 
 The first page is the inevitable license page. Just hit "Next".
 
@@ -108,3 +109,5 @@ That's it! Git is now installed and ready to use. From here, you might want to
 consider some customizations (aliases for commonly used commands, setting up  
 Git to use Beyond Compare as its differencing and merging tool, etc.), all of  
 which are described within this document.  
+
+[Git-Url]: https://git-scm.com/downloads  

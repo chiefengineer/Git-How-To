@@ -6,6 +6,11 @@ text, etc.)
 If the user decides to use BC for such purposes, below explains how to  
 configure git to use BC as the preferred difference/merge tool.  
 Perform this activity wherever BC is installed to ensure consistent operation.  
+And, just so you know, Beyond Compare is a "for-pay" tool. Not expensive (I  
+believe it's a staggering $30.00 USD for the standard edition, the author  
+recommends the "pro" edition as this gives the 3-way comparison and a bunch  
+of other goodies, it's $60.00 for a multi-platform release), see the info on  
+the download page for more information.  
 
   * git config --global diff.tool bc  
   * git config --global difftool.bc.path "C:\Program Files\Beyond Compare 4\BCompare.exe"  
@@ -40,4 +45,14 @@ a diff and you do not wish to see said prompt, execute the following
   * git config --global difftool.prompt false  
 
 and the prompt should not longer be displayed.  
+
+##### Installation Validation
+
+Once you have completed your desired changes, to ensure that git was indeed  
+paying attention and did as you asked, execute the following command:
+
+`git config --list --show-origin`
+
+The "--list" portion will show you the settings, the "--show-origin" portion  
+will show you which of the many config files git took the setting from.  
 
