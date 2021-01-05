@@ -148,7 +148,7 @@ To see the last entry in the Git log file:
 `git config --global alias.last 'log -1 HEAD'`  
 
 ...and so on and so forth. You can see that the key is the  
-`...alias.\<some two letter alias\> followed by the git command to alias`  
+`...alias.<some two letter alias> followed by the git command to alias`  
 and it doesn't have to be two characters, whatever you are comfortable with.  
 Pay close attention to the syntax of the `git last` and `git unstage` commands.  
 If you look closely, you can see that the "command" is embedded within single  
