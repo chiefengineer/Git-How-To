@@ -109,5 +109,11 @@ That's it! Git is now installed and ready to use. From here, you might want to
 consider some customizations (aliases for commonly used commands, setting up  
 Git to use Beyond Compare as its differencing and merging tool, etc.), all of  
 which are described within this document.  
+One last tidbit - if you don't want to wait for Git to figure out that it  
+should update itself, you can execute the following command:
+
+`git update-git-for-windows`  
+
+to run the installer that will update Git.  
 
 [Git-Url]: https://git-scm.com/downloads  

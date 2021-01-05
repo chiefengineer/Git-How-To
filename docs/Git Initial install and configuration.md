@@ -118,13 +118,6 @@ Execute the following commands to configure Git for your use:
 </details>
 
 <details>
-  <summary>(Optional) Configure Git to use Beyond Compare 4 for Diff/Merge</summary>
-
-[Configure Git to use Beyond Compare 4 for Diff/Merge][ConfigureGitBeyondCompare4-Url]
-
-</details>  
-
-<details>
   <summary>Make your life easier with Git command aliases</summary>
 
 Git aliases are your friend. Don't remember a complicated Git command? Always  
@@ -162,6 +155,13 @@ If you look closely, you can see that the "command" is embedded within single
 quotes. This is how you pass a command with parameters to the alias.  
 
 </details>
+
+<details>
+  <summary>(Optional) Configure Git to use Beyond Compare 4 for Diff/Merge</summary>
+
+[Configure Git to use Beyond Compare 4 for Diff/Merge][ConfigureGitBeyondCompare4-Url]
+
+</details>  
 
 ### Using Git
 

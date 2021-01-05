@@ -40,7 +40,7 @@
       branch. 
       Now, a bit of subtlety here. When you created your "Toy" branch, Git  
       privately took a snapshot of your current working directory and made  
-      that it's first "commit". Why is this important?  
+      that snapshot it's first "commit". Why is this important?  
       Simple. When you change branches, you need to make **_ABSOLUTELY SURE  
       THAT THERE ARE NO PENDING CHANGES IN YOUR WORKING DIRECTORY!_**  
       What does this mean? No "open" files, all editing completed, all editors  
