@@ -22,7 +22,9 @@ the download page for more information.
 
   * git difftool --dir-diff
     * This will compare the difference between the working directory and the  
-      last fetch/pull.
+      last fetch/pull.  
+  * git difftool <some file name>  
+    * This will compare the content of individual files.  
 
 ##### Configure Beyond Compare as a Merge tool
 
