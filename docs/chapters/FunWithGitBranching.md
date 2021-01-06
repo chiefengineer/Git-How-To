@@ -1,7 +1,8 @@
 ### A bit of fun with git branching
 
-  1.  We will presume that the repository created via the above process still  
-      exists. If not, please go re-create it.  
+  1.  Still working from the command prompt you opened earlier, we will presume  
+      that the repository created via the above process still exists. If not,  
+      please go re-create it.  
       Go ahead and create the "TestFile.txt" file or whatever you used before.  
       Commit it to the "main" branch - this is what happens when you do a  
       "commit" without changing branches - the default, first-created "branch"  

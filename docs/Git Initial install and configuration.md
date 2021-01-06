@@ -296,7 +296,7 @@ performing the git clone command as before.
 
   Presume the following activities have taken place:  
     1.  A problem has come up that needs solving e.g. Family Law.  
-    2.  It has been determines that software is needed as part of the solution.  
+    2.  It has been determined that software is needed as part of the solution.  
     3.  A BA has been summoned to create the necessary "Given..Then..When"  
         scenarios (e.g. Unit tests for us to implement in code) and has the  
         problem well defined as a solution in the abstract.  
