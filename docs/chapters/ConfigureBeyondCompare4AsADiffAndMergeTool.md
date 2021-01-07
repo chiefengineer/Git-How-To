@@ -12,39 +12,39 @@ recommends the "pro" edition as this gives the 3-way comparison and a bunch
 of other goodies, it's $60.00 for a multi-platform release), see the info on  
 the download page for more information.  
 
-  * git config --global diff.tool bc  
-  * git config --global difftool.bc.path "C:\Program Files\Beyond Compare 4\BCompare.exe"  
+  * `git config --global diff.tool bc`  
+  * `git config --global difftool.bc.path "C:\Program Files\Beyond Compare 4\BCompare.exe"`  
     * Ensure that the path is to your copy of BC.  
     * Ensure that, if there are spaces in the path, that the path is enclosed  
       in double quotes (").
 
 ##### To use BC as a difference tool
 
-  * git difftool --dir-diff
+  * `git difftool --dir-diff`
     * This will compare the difference between the working directory and the  
       last fetch/pull.  
-  * git difftool <some file name>  
+  * `git difftool <some file name>`  
     * This will compare the content of individual files.  
 
 ##### Configure Beyond Compare as a Merge tool
 
-  * git config --global merge.tool bc  
-  * git config --global mergetool.bc.path "C:\Program Files\Beyond Compare 4\BCompare.exe"  
+  * `git config --global merge.tool bc`  
+  * `git config --global mergetool.bc.path "C:\Program Files\Beyond Compare 4\BCompare.exe"`  
 
 ##### To use BC as a 3-way merge tool
 
-  * git mergetool \<Some File Name\>
+  * `git mergetool <some File Name>`
 
 Gits default setting is to retain merge files with *.orig extensions after a  
 successful merge. To disable this **_safety feature_** and automatically  
 delete *.orig files after a merge, execute:
 
-  * git config --global mergetool.keepBackup false
+  * `git config --global mergetool.keepBackup false`
 
 If you are presented with a prompt, e.g. "Launch 'bc4' [Y/n]?" when performing  
 a diff and you do not wish to see said prompt, execute the following
 
-  * git config --global difftool.prompt false  
+  * `git config --global difftool.prompt false`  
 
 and the prompt should not longer be displayed.  
 

@@ -114,6 +114,11 @@ Execute the following commands to configure Git for your use:
   * git config --global user.email \<Your Email address\>
   * git config --global core.autocrlf input
     * This last command ensures "Commit as-is, pull as Unix".
+  * git config --global credential.helper cache
+    * This helps with constant credential requests from those remote locations  
+      that require credentials to access e.g. user name and password. GitHub  
+      is like this (for now - they are changing their access system in August  
+      2021 to use SSH credentials).  
 
 </details>
 
@@ -126,14 +131,14 @@ customize yourself.
 
 Here are some common aliases to assign to various Git commands:  
 
-To change branches (git checkout \<branch name\>)  
+To change branches (git checkout <branch name>)  
 `git config --global alias.co checkout`  
 
 So now, instead of `git checkout`, you type `git co`
 
 Similarly, to create a new branch:  
 `git config --global alias.br branch`
-...and now it's `git br \<branch name\>` instead of `git branch`
+...and now it's `git br <branch name>` instead of `git branch`
 
 To commit:  
 `git config --global alias.cm commit` 
